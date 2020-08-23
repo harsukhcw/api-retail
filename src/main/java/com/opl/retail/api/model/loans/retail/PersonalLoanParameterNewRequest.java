@@ -212,6 +212,12 @@ public class PersonalLoanParameterNewRequest extends ProductMasterRequestNewStru
 	
 	private Boolean isSalAcTypeMandatory = false;
 	
+	private BigDecimal individualBureauMaximum12MonthDPDs;
+
+	private Boolean isIndividualBureauMaximum12MonthDPDsDisplay = false;
+	
+	private Boolean isIndividualBureauMaximum12MonthDPDsMandatory= false;
+
 
 	// For New Structure
 	private List<ProductParameterMappingRequest> parameterIds;
@@ -220,7 +226,8 @@ public class PersonalLoanParameterNewRequest extends ProductMasterRequestNewStru
 	private List<Long> manadatoryParameterIdList;
 	private List<Long> optioanalParameterIdList;
 	
-	
+	private List<Long> cibilScoreCreditHistoryLessThanSixMonthIdsMandatory;
+	private List<Long> cibilScoreCreditHistoryLessThanSixMonthIdsOptional;
 	
 	/*
 	 * //FP NEW REQUIREMENT private Integer employmentId;
@@ -1082,6 +1089,48 @@ public class PersonalLoanParameterNewRequest extends ProductMasterRequestNewStru
 
 	public void setIsSalAcTypeMandatory(Boolean isSalAcTypeMandatory) {
 		this.isSalAcTypeMandatory = isSalAcTypeMandatory;
+	}
+
+	public List<Long> getCibilScoreCreditHistoryLessThanSixMonthIdsMandatory() {
+		return cibilScoreCreditHistoryLessThanSixMonthIdsMandatory;
+	}
+
+	public void setCibilScoreCreditHistoryLessThanSixMonthIdsMandatory(
+			List<Long> cibilScoreCreditHistoryLessThanSixMonthIdsMandatory) {
+		this.cibilScoreCreditHistoryLessThanSixMonthIdsMandatory = cibilScoreCreditHistoryLessThanSixMonthIdsMandatory;
+	}
+
+	public List<Long> getCibilScoreCreditHistoryLessThanSixMonthIdsOptional() {
+		return cibilScoreCreditHistoryLessThanSixMonthIdsOptional;
+	}
+
+	public void setCibilScoreCreditHistoryLessThanSixMonthIdsOptional(
+			List<Long> cibilScoreCreditHistoryLessThanSixMonthIdsOptional) {
+		this.cibilScoreCreditHistoryLessThanSixMonthIdsOptional = cibilScoreCreditHistoryLessThanSixMonthIdsOptional;
+	}
+
+	public BigDecimal getIndividualBureauMaximum12MonthDPDs() {
+		return individualBureauMaximum12MonthDPDs;
+	}
+
+	public void setIndividualBureauMaximum12MonthDPDs(BigDecimal individualBureauMaximum12MonthDPDs) {
+		this.individualBureauMaximum12MonthDPDs = individualBureauMaximum12MonthDPDs;
+	}
+
+	public Boolean getIsIndividualBureauMaximum12MonthDPDsDisplay() {
+		return isIndividualBureauMaximum12MonthDPDsDisplay;
+	}
+
+	public void setIsIndividualBureauMaximum12MonthDPDsDisplay(Boolean isIndividualBureauMaximum12MonthDPDsDisplay) {
+		this.isIndividualBureauMaximum12MonthDPDsDisplay = isIndividualBureauMaximum12MonthDPDsDisplay;
+	}
+
+	public Boolean getIsIndividualBureauMaximum12MonthDPDsMandatory() {
+		return isIndividualBureauMaximum12MonthDPDsMandatory;
+	}
+
+	public void setIsIndividualBureauMaximum12MonthDPDsMandatory(Boolean isIndividualBureauMaximum12MonthDPDsMandatory) {
+		this.isIndividualBureauMaximum12MonthDPDsMandatory = isIndividualBureauMaximum12MonthDPDsMandatory;
 	}
 	
 }
