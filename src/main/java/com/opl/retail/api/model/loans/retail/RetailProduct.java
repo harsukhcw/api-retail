@@ -1106,6 +1106,103 @@ public class RetailProduct extends ProductMasterRequest {
 	public void setIsSalAcTypeMandatory(Boolean isSalAcTypeMandatory) {
 		this.isSalAcTypeMandatory = isSalAcTypeMandatory;
 	}
+
+	@Override
+	public String toString() {
+		return "RetailProduct [fpProductId=" + fpProductId + ", currency=" + currency + ", isAgeDisplay=" + isAgeDisplay
+				+ ", isAgeMandatory=" + isAgeMandatory + ", isAssetValueDisplay=" + isAssetValueDisplay
+				+ ", isAssetValueMandatory=" + isAssetValueMandatory + ", isGeographicalDisplay="
+				+ isGeographicalDisplay + ", isGeographicalMandatory=" + isGeographicalMandatory
+				+ ", isLoanAmountDisplay=" + isLoanAmountDisplay + ", isLoanAmountMandatory=" + isLoanAmountMandatory
+				+ ", isTenureDisplay=" + isTenureDisplay + ", isTenureMandatory=" + isTenureMandatory
+				+ ", isYearlyIncomeRangeDisplay=" + isYearlyIncomeRangeDisplay + ", isYearlyIncomeRangeMandatory="
+				+ isYearlyIncomeRangeMandatory + ", maxAge=" + maxAge + ", maxAssetValue=" + maxAssetValue
+				+ ", maxLoanAmount=" + maxLoanAmount + ", maxTenure=" + maxTenure + ", maxYearlyIncomeRange="
+				+ maxYearlyIncomeRange + ", minAge=" + minAge + ", minAssetValue=" + minAssetValue + ", minLoanAmount="
+				+ minLoanAmount + ", minTenure=" + minTenure + ", minYearlyIncomeRange=" + minYearlyIncomeRange
+				+ ", countryList=" + countryList + ", stateList=" + stateList + ", cityList=" + cityList
+				+ ", minMonthlyIncomeRange=" + minMonthlyIncomeRange + ", maxMonthlyIncomeRange="
+				+ maxMonthlyIncomeRange + ", isMonthlyIncomeRangeDisplay=" + isMonthlyIncomeRangeDisplay
+				+ ", isMonthlyIncomeRangeMandatory=" + isMonthlyIncomeRangeMandatory + ", isGrossIncomeRangeDisplay="
+				+ isGrossIncomeRangeDisplay + ", isGrossIncomeRangeMandatory=" + isGrossIncomeRangeMandatory
+				+ ", maxGrossIncomeRange=" + maxGrossIncomeRange + ", minGrossIncomeRange=" + minGrossIncomeRange
+				+ ", minBureauScore=" + minBureauScore + ", maxBureauScore=" + maxBureauScore
+				+ ", minBureauScoreLessThan6Month=" + minBureauScoreLessThan6Month + ", noBureauCreditHistory="
+				+ noBureauCreditHistory + ", isBureauScoreDisplay=" + isBureauScoreDisplay + ", isBureauScoreMandatory="
+				+ isBureauScoreMandatory + ", minBureauScoreDays=" + minBureauScoreDays + ", maxBureauScoreDays="
+				+ maxBureauScoreDays + ", isBureauScoreDaysDisplay=" + isBureauScoreDaysDisplay
+				+ ", isBureauScoreDaysMandatory=" + isBureauScoreDaysMandatory + ", minRiskScoreRetail="
+				+ minRiskScoreRetail + ", maxRiskScoreRetail=" + maxRiskScoreRetail + ", isRiskScoreRetailDisplay="
+				+ isRiskScoreRetailDisplay + ", isRiskScoreRetailMandatory=" + isRiskScoreRetailMandatory
+				+ ", minRiskScoreRetailOthThnSal=" + minRiskScoreRetailOthThnSal
+				+ ", isRiskScoreRetailOthThnSalDisplay=" + isRiskScoreRetailOthThnSalDisplay
+				+ ", isRiskScoreRetailOthThnSalMandatory=" + isRiskScoreRetailOthThnSalMandatory
+				+ ", minRiskScoreModelCoAppOthThnSal=" + minRiskScoreModelCoAppOthThnSal
+				+ ", isRiskScoreRetailCoAppOthThnSalDisplay=" + isRiskScoreRetailCoAppOthThnSalDisplay
+				+ ", isRiskScoreRetailCoAppOthThnSalMandatory=" + isRiskScoreRetailCoAppOthThnSalMandatory
+				+ ", isCoAppOthThnSalIncomeForEligibilityCalc=" + isCoAppOthThnSalIncomeForEligibilityCalc
+				+ ", empWithIds=" + empWithIds + ", isEmpWithDisplay=" + isEmpWithDisplay + ", isEmpWithMandatory="
+				+ isEmpWithMandatory + ", isEmpRatingDisplay=" + isEmpRatingDisplay + ", isEmpRatingMandatory="
+				+ isEmpRatingMandatory + ", minTotalJobExp=" + minTotalJobExp + ", maxTotalJobExp=" + maxTotalJobExp
+				+ ", isTotalJobExpDisplay=" + isTotalJobExpDisplay + ", isTotalJobExpMandatory="
+				+ isTotalJobExpMandatory + ", minTotalCurrentJobExp=" + minTotalCurrentJobExp
+				+ ", maxTotalCurrentJobExp=" + maxTotalCurrentJobExp + ", isTotalCurrentJobExpDisplay="
+				+ isTotalCurrentJobExpDisplay + ", isTotalCurrentJobExpMandatory=" + isTotalCurrentJobExpMandatory
+				+ ", empStatusIds=" + empStatusIds + ", isEmpStatusDisplay=" + isEmpStatusDisplay
+				+ ", isEmpStatusMandatory=" + isEmpStatusMandatory + ", creditRatingSelectedList="
+				+ creditRatingSelectedList + ", userOrgId=" + userOrgId + ", userCreditRating=" + userCreditRating
+				+ ", isBankingRelationMandatory=" + isBankingRelationMandatory + ", isBankingRelationDisplay="
+				+ isBankingRelationDisplay + ", minBankRelation=" + minBankRelation + ", maxBankRelation="
+				+ maxBankRelation + ", salaryModeIds=" + salaryModeIds + ", isSalaryModeDisplay=" + isSalaryModeDisplay
+				+ ", isSalaryModeMandatory=" + isSalaryModeMandatory + ", isSalaryAcTypeDisplay="
+				+ isSalaryAcTypeDisplay + ", isSalaryAcTypeMandatory=" + isSalaryAcTypeMandatory + ", salaryAcType="
+				+ salaryAcType + ", assessmentMethodId=" + assessmentMethodId + ", emiNmiDetailRequestList="
+				+ emiNmiDetailRequestList + ", isBasedOnIncome=" + isBasedOnIncome + ", isMultiplierOfIncomeCheck="
+				+ isMultiplierOfIncomeCheck + ", multiplierOfIncomeCheck=" + multiplierOfIncomeCheck
+				+ ", isEmiNmiCheck=" + isEmiNmiCheck + ", emiNmiCheck=" + emiNmiCheck + ", basedOnIncomeType="
+				+ basedOnIncomeType + ", multiplierIncomeType=" + multiplierIncomeType + ", basedOnType=" + basedOnType
+				+ ", bureauVersion=" + bureauVersion + ", minNetTakeHomeSalary=" + minNetTakeHomeSalary
+				+ ", isMinNetTakeHomeSalaryDisplay=" + isMinNetTakeHomeSalaryDisplay
+				+ ", isMinNetTakeHomeSalaryMandatory=" + isMinNetTakeHomeSalaryMandatory + ", campaignCode="
+				+ campaignCode + ", stdIncrementalPercentage=" + stdIncrementalPercentage + ", maxRetirementAge="
+				+ maxRetirementAge + ", isAllowAmtPastDue=" + isAllowAmtPastDue + ", isAllowSuitFiled="
+				+ isAllowSuitFiled + ", isEmiForEligibilityCalc=" + isEmiForEligibilityCalc + ", salAcType=" + salAcType
+				+ ", isSalAcTypeDisplay=" + isSalAcTypeDisplay + ", isSalAcTypeMandatory=" + isSalAcTypeMandatory
+				+ ", bureauScoreIds=" + bureauScoreIds + ", getJobId()=" + getJobId() + ", getId()=" + getId()
+				+ ", getEndDate()=" + getEndDate() + ", getName()=" + getName() + ", getProductId()=" + getProductId()
+				+ ", getStartDate()=" + getStartDate() + ", getUserId()=" + getUserId() + ", getProductCode()="
+				+ getProductCode() + ", getIsMatched()=" + getIsMatched() + ", getCreatedDate()=" + getCreatedDate()
+				+ ", getFpName()=" + getFpName() + ", getIsActive()=" + getIsActive() + ", getAppstage()="
+				+ getAppstage() + ", getScoreModelId()=" + getScoreModelId() + ", getBusinessTypeId()="
+				+ getBusinessTypeId() + ", getIsParameterFilled()=" + getIsParameterFilled() + ", getWcRenewalStatus()="
+				+ getWcRenewalStatus() + ", getFinId()=" + getFinId() + ", getProposalCount()=" + getProposalCount()
+				+ ", getActiveInactiveJobId()=" + getActiveInactiveJobId() + ", getActionFor()=" + getActionFor()
+				+ ", getGstType()=" + getGstType() + ", getScoreModelIdCoAppId()=" + getScoreModelIdCoAppId()
+				+ ", getPurposeLoanModelId()=" + getPurposeLoanModelId() + ", getImportFromId()=" + getImportFromId()
+				+ ", getIsGst()=" + getIsGst() + ", getIsItr()=" + getIsItr() + ", getIsBankStatement()="
+				+ getIsBankStatement() + ", getIsMca()=" + getIsMca() + ", getIsBureuPersonal()=" + getIsBureuPersonal()
+				+ ", getIsBureuCommercial()=" + getIsBureuCommercial() + ", getIsManualFill()=" + getIsManualFill()
+				+ ", getScoreModelIdOthThnSal()=" + getScoreModelIdOthThnSal() + ", getScoreModelIdCoAppIdOthThnSal()="
+				+ getScoreModelIdCoAppIdOthThnSal() + ", getProductType()=" + getProductType()
+				+ ", getMinInterestCoverageWithDepreciation()=" + getMinInterestCoverageWithDepreciation()
+				+ ", getMaxInterestCoverageWithDepreciation()=" + getMaxInterestCoverageWithDepreciation()
+				+ ", getIsInterestCoverageWithDepreciationDisplay()=" + getIsInterestCoverageWithDepreciationDisplay()
+				+ ", getIsInterestCoverageWithDepreciationMandatory()="
+				+ getIsInterestCoverageWithDepreciationMandatory() + ", getIndividualBureauMaximumSixMonthDPDs()="
+				+ getIndividualBureauMaximumSixMonthDPDs() + ", getIsIndividualBureauMaximumSixMonthDPDsDisplay()="
+				+ getIsIndividualBureauMaximumSixMonthDPDsDisplay()
+				+ ", getIsIndividualBureauMaximumSixMonthDPDsMandatory()="
+				+ getIsIndividualBureauMaximumSixMonthDPDsMandatory()
+				+ ", getIsIndividualBureauMaximumThreeMonthDPDsDisplay()="
+				+ getIsIndividualBureauMaximumThreeMonthDPDsDisplay()
+				+ ", getIsIndividualBureauMaximumThreeMonthDPDsMandatory()="
+				+ getIsIndividualBureauMaximumThreeMonthDPDsMandatory()
+				+ ", getIndividualBureauMaximumThreeMonthDPDs()=" + getIndividualBureauMaximumThreeMonthDPDs()
+				+ ", getProductTab()=" + getProductTab() + ", getModifiedDate()=" + getModifiedDate()
+				+ ", getGetData()=" + getGetData() + ", getNextPage()=" + getNextPage() + ", getPageIndex()="
+				+ getPageIndex() + ", getSize()=" + getSize() + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + ", toString()=" + super.toString() + "]";
+	}
 	
 	
 	
