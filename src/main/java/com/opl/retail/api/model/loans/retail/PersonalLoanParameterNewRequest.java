@@ -1,21 +1,21 @@
 package com.opl.retail.api.model.loans.retail;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.opl.retail.api.model.loans.DataRequest;
-import com.opl.retail.api.model.loans.ProductMasterRequest;
+import com.opl.retail.api.model.loans.ProductMasterRequestNewStructure;
 
+/**
+ * The persistent class for the fp_personal_loan_details database table.
+ * 
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class RetailProduct extends ProductMasterRequest {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3041203910477155624L;
+public class PersonalLoanParameterNewRequest extends ProductMasterRequestNewStructure implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	private Long fpProductId;
 
@@ -24,10 +24,6 @@ public class RetailProduct extends ProductMasterRequest {
 	private Boolean isAgeDisplay = false;
 
 	private Boolean isAgeMandatory = false;
-
-	private Boolean isAssetValueDisplay = false;
-
-	private Boolean isAssetValueMandatory = false;
 
 	private Boolean isGeographicalDisplay = false;
 
@@ -47,8 +43,6 @@ public class RetailProduct extends ProductMasterRequest {
 
 	private Double maxAge;
 
-	private Double maxAssetValue;
-
 	private Double maxLoanAmount;
 
 	private Double maxTenure;
@@ -56,8 +50,6 @@ public class RetailProduct extends ProductMasterRequest {
 	private Double maxYearlyIncomeRange;
 
 	private Double minAge;
-
-	private Double minAssetValue;
 
 	private Double minLoanAmount;
 
@@ -78,24 +70,10 @@ public class RetailProduct extends ProductMasterRequest {
 	private Boolean isMonthlyIncomeRangeDisplay= false;
 
 	private Boolean isMonthlyIncomeRangeMandatory= false;
-	
-	private Boolean isGrossIncomeRangeDisplay= false;
-
-	private Boolean isGrossIncomeRangeMandatory= false;
-	
-	private Double maxGrossIncomeRange;
-
-	private Double minGrossIncomeRange;
 
 	private Double minBureauScore;
 
 	private Double maxBureauScore;
-	
-	//Less Than 6 month of Credit History
-	private Integer minBureauScoreLessThan6Month;
-	
-	//No Credit History
-	private Boolean noBureauCreditHistory = true;
 
 	private Boolean isBureauScoreDisplay= false;
 
@@ -116,23 +94,13 @@ public class RetailProduct extends ProductMasterRequest {
 	private Boolean isRiskScoreRetailDisplay= false;
 
 	private Boolean isRiskScoreRetailMandatory= false;
-	
-	//Risk Model For Other than Salaried
-	private Double minRiskScoreRetailOthThnSal;
-	private Boolean isRiskScoreRetailOthThnSalDisplay=true;
-	private Boolean isRiskScoreRetailOthThnSalMandatory=true;
-	
-	private Double minRiskScoreModelCoAppOthThnSal;
-	private Boolean isRiskScoreRetailCoAppOthThnSalDisplay=true;
-	private Boolean isRiskScoreRetailCoAppOthThnSalMandatory=true;
-	private Boolean isCoAppOthThnSalIncomeForEligibilityCalc=true;
 
 	private List<Integer> empWithIds;
-	
+
 	private Boolean isEmpWithDisplay= false;
 
 	private Boolean isEmpWithMandatory= false;
-	
+
 	private Boolean isEmpRatingDisplay= false;
 
 	private Boolean isEmpRatingMandatory= false;
@@ -144,7 +112,7 @@ public class RetailProduct extends ProductMasterRequest {
 	private Boolean isTotalJobExpDisplay= false;
 
 	private Boolean isTotalJobExpMandatory= false;
-	
+
 	private Double minTotalCurrentJobExp;
 
 	private Double maxTotalCurrentJobExp;
@@ -152,54 +120,62 @@ public class RetailProduct extends ProductMasterRequest {
 	private Boolean isTotalCurrentJobExpDisplay= false;
 
 	private Boolean isTotalCurrentJobExpMandatory= false;
-	
+
 	private List<Integer> empStatusIds;
-	
+
 	private Boolean isEmpStatusDisplay= false;
 
 	private Boolean isEmpStatusMandatory= false;
-	
+
 	private List<CreditRatingPlParameter> creditRatingSelectedList;
 	
+	private List<EmiNmiDetailRequest> emiNmiDetailRequestList;
+
+	private Object workflowData;
+
 	private Long userOrgId;
-	
+
 	private Integer userCreditRating;
-	
+
 	private Boolean isBankingRelationMandatory= false;
 
 	private Boolean isBankingRelationDisplay= false;
-	
+
 	private Double minBankRelation;
 
 	private Double maxBankRelation;
 
 	private List<Integer> salaryModeIds;
-	
+
 	private Boolean isSalaryModeDisplay= false;
 
 	private Boolean isSalaryModeMandatory= false;
-	
+
 	private Boolean isSalaryAcTypeDisplay= false;
 
 	private Boolean isSalaryAcTypeMandatory= false;
-	
+
 	private Integer salaryAcType;
-	
+
 	private Integer assessmentMethodId;
-	
-	private List<EmiNmiDetailRequest> emiNmiDetailRequestList;
-	
-	
-	
+
 	private Boolean isBasedOnIncome = false;
-	
+
 	private Boolean isMultiplierOfIncomeCheck = false;
 
 	private Integer multiplierOfIncomeCheck;
-	
+
 	private Boolean isEmiNmiCheck = false;
 
 	private BigDecimal emiNmiCheck;
+	
+	private Boolean isGrossIncomeRangeDisplay= false;
+
+	private Boolean isGrossIncomeRangeMandatory= false;
+	
+	private Double maxGrossIncomeRange;
+
+	private Double minGrossIncomeRange;
 	
 	private Integer basedOnIncomeType;
 	
@@ -207,12 +183,19 @@ public class RetailProduct extends ProductMasterRequest {
 	
 	private Integer basedOnType;
 	
-	private Integer bureauVersion;
-	
 	// Minimum Net Take Home Salary (Rs.): 
 	private Double minNetTakeHomeSalary;
 	private Boolean isMinNetTakeHomeSalaryDisplay = false;
 	private Boolean isMinNetTakeHomeSalaryMandatory = false;
+	
+	//Less Than 6 month of Credit History
+	private Integer minBureauScoreLessThan6Month;
+	
+	//No Credit History
+	private Boolean noBureauCreditHistory = true;
+	
+	private List<Integer> bureauScoreIds = Collections.emptyList();
+	private Integer bureauVersion;
 	
 	private Integer campaignCode;
 	
@@ -222,9 +205,6 @@ public class RetailProduct extends ProductMasterRequest {
 	
 	private Boolean isAllowAmtPastDue = false;
 	private Boolean isAllowSuitFiled = false;
-
-//	Do You want to consider EMI of Borrower who is acting as a Guarantor/ Authorized User for Loan Eligibility calculation?
-	private Boolean isEmiForEligibilityCalc = false;
 	
 	private String salAcType;
 	
@@ -232,11 +212,119 @@ public class RetailProduct extends ProductMasterRequest {
 	
 	private Boolean isSalAcTypeMandatory = false;
 	
-	private List<Integer> bureauScoreIds = Collections.emptyList();
+	private BigDecimal individualBureauMaximum12MonthDPDs;
+
+	private Boolean isIndividualBureauMaximum12MonthDPDsDisplay = false;
 	
+	private Boolean isIndividualBureauMaximum12MonthDPDsMandatory= false;
+
+
+	// For New Structure
+	private List<ProductParameterMappingRequest> parameterIds;
+	private List<ProductParameterMappingRequest> mandatoryParameters;
+	private List<ProductParameterMappingRequest> optionalParameters;
+	private List<Long> manadatoryParameterIdList;
+	private List<Long> optioanalParameterIdList;
+	
+	private List<Long> cibilScoreCreditHistoryLessThanSixMonthIdsMandatory;
+	private List<Long> cibilScoreCreditHistoryLessThanSixMonthIdsOptional;
+	
+	/*
+	 * //FP NEW REQUIREMENT private Integer employmentId;
+	 * 
+	 * private Integer employmentPlaceId;
+	 * 
+	 * private Integer homeLoanTypeId;
+	 * 
+	 * private Integer mincurrentJobExperience;
+	 * 
+	 * private Integer maxCurrentJobExperience;
+	 * 
+	 * private Integer minTotalJobExperience;
+	 * 
+	 * private Integer maxTotalJobExperience;
+	 * 
+	 * private Double foir;
+	 * 
+	 * private Boolean isEmploymentTypeDisplay=false;
+	 * 
+	 * private Boolean isEmploymentTypeMandatory=false;
+	 * 
+	 * private Boolean isEmploymentPlaceDisplay=false;
+	 * 
+	 * private Boolean isEmploymentPlaceMandatory=false;
+	 * 
+	 * private Boolean isCurrentJobExperienceDisplay=false;
+	 * 
+	 * private Boolean isCurrentJobExperienceMandatory=false;
+	 * 
+	 * private Boolean isTotalJobExperienceDisplay=false;
+	 * 
+	 * private Boolean isTotalJobExperienceMandatory=false;
+	 */
+
+	public List<ProductParameterMappingRequest> getParameterIds() {
+		return parameterIds;
+	}
+
+	public void setParameterIds(List<ProductParameterMappingRequest> parameterIds) {
+		this.parameterIds = parameterIds;
+	}
+
+	public List<ProductParameterMappingRequest> getMandatoryParameters() {
+		return mandatoryParameters;
+	}
+
+	public void setMandatoryParameters(List<ProductParameterMappingRequest> mandatoryParameters) {
+		this.mandatoryParameters = mandatoryParameters;
+	}
+
+	public List<ProductParameterMappingRequest> getOptionalParameters() {
+		return optionalParameters;
+	}
+
+	public void setOptionalParameters(List<ProductParameterMappingRequest> optionalParameters) {
+		this.optionalParameters = optionalParameters;
+	}
+
+	public List<Long> getManadatoryParameterIdList() {
+		return manadatoryParameterIdList;
+	}
+
+	public void setManadatoryParameterIdList(List<Long> manadatoryParameterIdList) {
+		this.manadatoryParameterIdList = manadatoryParameterIdList;
+	}
+
+	public List<Long> getOptioanalParameterIdList() {
+		return optioanalParameterIdList;
+	}
+
+	public void setOptioanalParameterIdList(List<Long> optioanalParameterIdList) {
+		this.optioanalParameterIdList = optioanalParameterIdList;
+	}
+
+	public Boolean getIsAllowAmtPastDue() {
+		return isAllowAmtPastDue;
+	}
+
+	public void setIsAllowAmtPastDue(Boolean isAllowAmtPastDue) {
+		this.isAllowAmtPastDue = isAllowAmtPastDue;
+	}
+
+	public Boolean getIsAllowSuitFiled() {
+		return isAllowSuitFiled;
+	}
+
+	public void setIsAllowSuitFiled(Boolean isAllowSuitFiled) {
+		this.isAllowSuitFiled = isAllowSuitFiled;
+	}
+
+	public PersonalLoanParameterNewRequest() {
+		// Do nothing because of X and Y.
+	}
 
 	public Long getFpProductId() {
-		return fpProductId;
+		return this.fpProductId;
 	}
 
 	public void setFpProductId(Long fpProductId) {
@@ -244,7 +332,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Integer getCurrency() {
-		return currency;
+		return this.currency;
 	}
 
 	public void setCurrency(Integer currency) {
@@ -252,7 +340,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Boolean getIsAgeDisplay() {
-		return isAgeDisplay;
+		return this.isAgeDisplay;
 	}
 
 	public void setIsAgeDisplay(Boolean isAgeDisplay) {
@@ -260,31 +348,15 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Boolean getIsAgeMandatory() {
-		return isAgeMandatory;
+		return this.isAgeMandatory;
 	}
 
 	public void setIsAgeMandatory(Boolean isAgeMandatory) {
 		this.isAgeMandatory = isAgeMandatory;
 	}
 
-	public Boolean getIsAssetValueDisplay() {
-		return isAssetValueDisplay;
-	}
-
-	public void setIsAssetValueDisplay(Boolean isAssetValueDisplay) {
-		this.isAssetValueDisplay = isAssetValueDisplay;
-	}
-
-	public Boolean getIsAssetValueMandatory() {
-		return isAssetValueMandatory;
-	}
-
-	public void setIsAssetValueMandatory(Boolean isAssetValueMandatory) {
-		this.isAssetValueMandatory = isAssetValueMandatory;
-	}
-
 	public Boolean getIsGeographicalDisplay() {
-		return isGeographicalDisplay;
+		return this.isGeographicalDisplay;
 	}
 
 	public void setIsGeographicalDisplay(Boolean isGeographicalDisplay) {
@@ -292,7 +364,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Boolean getIsGeographicalMandatory() {
-		return isGeographicalMandatory;
+		return this.isGeographicalMandatory;
 	}
 
 	public void setIsGeographicalMandatory(Boolean isGeographicalMandatory) {
@@ -300,7 +372,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Boolean getIsLoanAmountDisplay() {
-		return isLoanAmountDisplay;
+		return this.isLoanAmountDisplay;
 	}
 
 	public void setIsLoanAmountDisplay(Boolean isLoanAmountDisplay) {
@@ -308,7 +380,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Boolean getIsLoanAmountMandatory() {
-		return isLoanAmountMandatory;
+		return this.isLoanAmountMandatory;
 	}
 
 	public void setIsLoanAmountMandatory(Boolean isLoanAmountMandatory) {
@@ -316,7 +388,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Boolean getIsTenureDisplay() {
-		return isTenureDisplay;
+		return this.isTenureDisplay;
 	}
 
 	public void setIsTenureDisplay(Boolean isTenureDisplay) {
@@ -324,7 +396,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Boolean getIsTenureMandatory() {
-		return isTenureMandatory;
+		return this.isTenureMandatory;
 	}
 
 	public void setIsTenureMandatory(Boolean isTenureMandatory) {
@@ -332,7 +404,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Boolean getIsYearlyIncomeRangeDisplay() {
-		return isYearlyIncomeRangeDisplay;
+		return this.isYearlyIncomeRangeDisplay;
 	}
 
 	public void setIsYearlyIncomeRangeDisplay(Boolean isYearlyIncomeRangeDisplay) {
@@ -340,7 +412,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Boolean getIsYearlyIncomeRangeMandatory() {
-		return isYearlyIncomeRangeMandatory;
+		return this.isYearlyIncomeRangeMandatory;
 	}
 
 	public void setIsYearlyIncomeRangeMandatory(Boolean isYearlyIncomeRangeMandatory) {
@@ -348,23 +420,15 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Double getMaxAge() {
-		return maxAge;
+		return this.maxAge;
 	}
 
 	public void setMaxAge(Double maxAge) {
 		this.maxAge = maxAge;
 	}
 
-	public Double getMaxAssetValue() {
-		return maxAssetValue;
-	}
-
-	public void setMaxAssetValue(Double maxAssetValue) {
-		this.maxAssetValue = maxAssetValue;
-	}
-
 	public Double getMaxLoanAmount() {
-		return maxLoanAmount;
+		return this.maxLoanAmount;
 	}
 
 	public void setMaxLoanAmount(Double maxLoanAmount) {
@@ -372,7 +436,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Double getMaxTenure() {
-		return maxTenure;
+		return this.maxTenure;
 	}
 
 	public void setMaxTenure(Double maxTenure) {
@@ -380,7 +444,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Double getMaxYearlyIncomeRange() {
-		return maxYearlyIncomeRange;
+		return this.maxYearlyIncomeRange;
 	}
 
 	public void setMaxYearlyIncomeRange(Double maxYearlyIncomeRange) {
@@ -388,23 +452,15 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Double getMinAge() {
-		return minAge;
+		return this.minAge;
 	}
 
 	public void setMinAge(Double minAge) {
 		this.minAge = minAge;
 	}
 
-	public Double getMinAssetValue() {
-		return minAssetValue;
-	}
-
-	public void setMinAssetValue(Double minAssetValue) {
-		this.minAssetValue = minAssetValue;
-	}
-
 	public Double getMinLoanAmount() {
-		return minLoanAmount;
+		return this.minLoanAmount;
 	}
 
 	public void setMinLoanAmount(Double minLoanAmount) {
@@ -412,7 +468,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Double getMinTenure() {
-		return minTenure;
+		return this.minTenure;
 	}
 
 	public void setMinTenure(Double minTenure) {
@@ -420,7 +476,7 @@ public class RetailProduct extends ProductMasterRequest {
 	}
 
 	public Double getMinYearlyIncomeRange() {
-		return minYearlyIncomeRange;
+		return this.minYearlyIncomeRange;
 	}
 
 	public void setMinYearlyIncomeRange(Double minYearlyIncomeRange) {
@@ -449,6 +505,14 @@ public class RetailProduct extends ProductMasterRequest {
 
 	public void setCityList(List<DataRequest> cityList) {
 		this.cityList = cityList;
+	}
+
+	public Object getWorkflowData() {
+		return workflowData;
+	}
+
+	public void setWorkflowData(Object workflowData) {
+		this.workflowData = workflowData;
 	}
 
 	public Double getMinMonthlyIncomeRange() {
@@ -505,14 +569,6 @@ public class RetailProduct extends ProductMasterRequest {
 
 	public void setIsBureauScoreDisplay(Boolean isBureauScoreDisplay) {
 		this.isBureauScoreDisplay = isBureauScoreDisplay;
-	}
-
-	public Boolean getIsBureauScoreMandatory() {
-		return isBureauScoreMandatory;
-	}
-
-	public void setIsBureauScoreMandatory(Boolean isBureauScoreMandatory) {
-		this.isBureauScoreMandatory = isBureauScoreMandatory;
 	}
 
 	public Double getMinBureauScoreDays() {
@@ -713,6 +769,14 @@ public class RetailProduct extends ProductMasterRequest {
 
 	public void setCreditRatingSelectedList(List<CreditRatingPlParameter> creditRatingSelectedList) {
 		this.creditRatingSelectedList = creditRatingSelectedList;
+	}
+
+	public Boolean getIsBureauScoreMandatory() {
+		return isBureauScoreMandatory;
+	}
+
+	public void setIsBureauScoreMandatory(Boolean isBureauScoreMandatory) {
+		this.isBureauScoreMandatory = isBureauScoreMandatory;
 	}
 
 	public Long getUserOrgId() {
@@ -963,62 +1027,6 @@ public class RetailProduct extends ProductMasterRequest {
 		this.noBureauCreditHistory = noBureauCreditHistory;
 	}
 
-	public Double getMinRiskScoreRetailOthThnSal() {
-		return minRiskScoreRetailOthThnSal;
-	}
-
-	public void setMinRiskScoreRetailOthThnSal(Double minRiskScoreRetailOthThnSal) {
-		this.minRiskScoreRetailOthThnSal = minRiskScoreRetailOthThnSal;
-	}
-
-	public Boolean getIsRiskScoreRetailOthThnSalDisplay() {
-		return isRiskScoreRetailOthThnSalDisplay;
-	}
-
-	public void setIsRiskScoreRetailOthThnSalDisplay(Boolean isRiskScoreRetailOthThnSalDisplay) {
-		this.isRiskScoreRetailOthThnSalDisplay = isRiskScoreRetailOthThnSalDisplay;
-	}
-
-	public Boolean getIsRiskScoreRetailOthThnSalMandatory() {
-		return isRiskScoreRetailOthThnSalMandatory;
-	}
-
-	public void setIsRiskScoreRetailOthThnSalMandatory(Boolean isRiskScoreRetailOthThnSalMandatory) {
-		this.isRiskScoreRetailOthThnSalMandatory = isRiskScoreRetailOthThnSalMandatory;
-	}
-
-	public Double getMinRiskScoreModelCoAppOthThnSal() {
-		return minRiskScoreModelCoAppOthThnSal;
-	}
-
-	public void setMinRiskScoreModelCoAppOthThnSal(Double minRiskScoreModelCoAppOthThnSal) {
-		this.minRiskScoreModelCoAppOthThnSal = minRiskScoreModelCoAppOthThnSal;
-	}
-
-	public Boolean getIsRiskScoreRetailCoAppOthThnSalDisplay() {
-		return isRiskScoreRetailCoAppOthThnSalDisplay;
-	}
-
-	public void setIsRiskScoreRetailCoAppOthThnSalDisplay(Boolean isRiskScoreRetailCoAppOthThnSalDisplay) {
-		this.isRiskScoreRetailCoAppOthThnSalDisplay = isRiskScoreRetailCoAppOthThnSalDisplay;
-	}
-
-	public Boolean getIsRiskScoreRetailCoAppOthThnSalMandatory() {
-		return isRiskScoreRetailCoAppOthThnSalMandatory;
-	}
-
-	public void setIsRiskScoreRetailCoAppOthThnSalMandatory(Boolean isRiskScoreRetailCoAppOthThnSalMandatory) {
-		this.isRiskScoreRetailCoAppOthThnSalMandatory = isRiskScoreRetailCoAppOthThnSalMandatory;
-	}
-
-	public Boolean getIsCoAppOthThnSalIncomeForEligibilityCalc() {
-		return isCoAppOthThnSalIncomeForEligibilityCalc;
-	}
-
-	public void setIsCoAppOthThnSalIncomeForEligibilityCalc(Boolean coAppOthThnSalIncomeForEligibilityCalc) {
-		isCoAppOthThnSalIncomeForEligibilityCalc = coAppOthThnSalIncomeForEligibilityCalc;
-	}
-
 	public List<Integer> getBureauScoreIds() {
 		return bureauScoreIds;
 	}
@@ -1059,30 +1067,6 @@ public class RetailProduct extends ProductMasterRequest {
 		this.maxRetirementAge = maxRetirementAge;
 	}
 
-	public Boolean getIsAllowAmtPastDue() {
-		return isAllowAmtPastDue;
-	}
-
-	public void setIsAllowAmtPastDue(Boolean isAllowAmtPastDue) {
-		this.isAllowAmtPastDue = isAllowAmtPastDue;
-	}
-
-	public Boolean getIsAllowSuitFiled() {
-		return isAllowSuitFiled;
-	}
-
-	public void setIsAllowSuitFiled(Boolean isAllowSuitFiled) {
-		this.isAllowSuitFiled = isAllowSuitFiled;
-	}
-
-	public Boolean getIsEmiForEligibilityCalc() {
-		return isEmiForEligibilityCalc;
-	}
-
-	public void setIsEmiForEligibilityCalc(Boolean isEmiForEligibilityCalc) {
-		this.isEmiForEligibilityCalc = isEmiForEligibilityCalc;
-	}
-
 	public String getSalAcType() {
 		return salAcType;
 	}
@@ -1107,103 +1091,46 @@ public class RetailProduct extends ProductMasterRequest {
 		this.isSalAcTypeMandatory = isSalAcTypeMandatory;
 	}
 
-	@Override
-	public String toString() {
-		return "RetailProduct [fpProductId=" + fpProductId + ", currency=" + currency + ", isAgeDisplay=" + isAgeDisplay
-				+ ", isAgeMandatory=" + isAgeMandatory + ", isAssetValueDisplay=" + isAssetValueDisplay
-				+ ", isAssetValueMandatory=" + isAssetValueMandatory + ", isGeographicalDisplay="
-				+ isGeographicalDisplay + ", isGeographicalMandatory=" + isGeographicalMandatory
-				+ ", isLoanAmountDisplay=" + isLoanAmountDisplay + ", isLoanAmountMandatory=" + isLoanAmountMandatory
-				+ ", isTenureDisplay=" + isTenureDisplay + ", isTenureMandatory=" + isTenureMandatory
-				+ ", isYearlyIncomeRangeDisplay=" + isYearlyIncomeRangeDisplay + ", isYearlyIncomeRangeMandatory="
-				+ isYearlyIncomeRangeMandatory + ", maxAge=" + maxAge + ", maxAssetValue=" + maxAssetValue
-				+ ", maxLoanAmount=" + maxLoanAmount + ", maxTenure=" + maxTenure + ", maxYearlyIncomeRange="
-				+ maxYearlyIncomeRange + ", minAge=" + minAge + ", minAssetValue=" + minAssetValue + ", minLoanAmount="
-				+ minLoanAmount + ", minTenure=" + minTenure + ", minYearlyIncomeRange=" + minYearlyIncomeRange
-				+ ", countryList=" + countryList + ", stateList=" + stateList + ", cityList=" + cityList
-				+ ", minMonthlyIncomeRange=" + minMonthlyIncomeRange + ", maxMonthlyIncomeRange="
-				+ maxMonthlyIncomeRange + ", isMonthlyIncomeRangeDisplay=" + isMonthlyIncomeRangeDisplay
-				+ ", isMonthlyIncomeRangeMandatory=" + isMonthlyIncomeRangeMandatory + ", isGrossIncomeRangeDisplay="
-				+ isGrossIncomeRangeDisplay + ", isGrossIncomeRangeMandatory=" + isGrossIncomeRangeMandatory
-				+ ", maxGrossIncomeRange=" + maxGrossIncomeRange + ", minGrossIncomeRange=" + minGrossIncomeRange
-				+ ", minBureauScore=" + minBureauScore + ", maxBureauScore=" + maxBureauScore
-				+ ", minBureauScoreLessThan6Month=" + minBureauScoreLessThan6Month + ", noBureauCreditHistory="
-				+ noBureauCreditHistory + ", isBureauScoreDisplay=" + isBureauScoreDisplay + ", isBureauScoreMandatory="
-				+ isBureauScoreMandatory + ", minBureauScoreDays=" + minBureauScoreDays + ", maxBureauScoreDays="
-				+ maxBureauScoreDays + ", isBureauScoreDaysDisplay=" + isBureauScoreDaysDisplay
-				+ ", isBureauScoreDaysMandatory=" + isBureauScoreDaysMandatory + ", minRiskScoreRetail="
-				+ minRiskScoreRetail + ", maxRiskScoreRetail=" + maxRiskScoreRetail + ", isRiskScoreRetailDisplay="
-				+ isRiskScoreRetailDisplay + ", isRiskScoreRetailMandatory=" + isRiskScoreRetailMandatory
-				+ ", minRiskScoreRetailOthThnSal=" + minRiskScoreRetailOthThnSal
-				+ ", isRiskScoreRetailOthThnSalDisplay=" + isRiskScoreRetailOthThnSalDisplay
-				+ ", isRiskScoreRetailOthThnSalMandatory=" + isRiskScoreRetailOthThnSalMandatory
-				+ ", minRiskScoreModelCoAppOthThnSal=" + minRiskScoreModelCoAppOthThnSal
-				+ ", isRiskScoreRetailCoAppOthThnSalDisplay=" + isRiskScoreRetailCoAppOthThnSalDisplay
-				+ ", isRiskScoreRetailCoAppOthThnSalMandatory=" + isRiskScoreRetailCoAppOthThnSalMandatory
-				+ ", isCoAppOthThnSalIncomeForEligibilityCalc=" + isCoAppOthThnSalIncomeForEligibilityCalc
-				+ ", empWithIds=" + empWithIds + ", isEmpWithDisplay=" + isEmpWithDisplay + ", isEmpWithMandatory="
-				+ isEmpWithMandatory + ", isEmpRatingDisplay=" + isEmpRatingDisplay + ", isEmpRatingMandatory="
-				+ isEmpRatingMandatory + ", minTotalJobExp=" + minTotalJobExp + ", maxTotalJobExp=" + maxTotalJobExp
-				+ ", isTotalJobExpDisplay=" + isTotalJobExpDisplay + ", isTotalJobExpMandatory="
-				+ isTotalJobExpMandatory + ", minTotalCurrentJobExp=" + minTotalCurrentJobExp
-				+ ", maxTotalCurrentJobExp=" + maxTotalCurrentJobExp + ", isTotalCurrentJobExpDisplay="
-				+ isTotalCurrentJobExpDisplay + ", isTotalCurrentJobExpMandatory=" + isTotalCurrentJobExpMandatory
-				+ ", empStatusIds=" + empStatusIds + ", isEmpStatusDisplay=" + isEmpStatusDisplay
-				+ ", isEmpStatusMandatory=" + isEmpStatusMandatory + ", creditRatingSelectedList="
-				+ creditRatingSelectedList + ", userOrgId=" + userOrgId + ", userCreditRating=" + userCreditRating
-				+ ", isBankingRelationMandatory=" + isBankingRelationMandatory + ", isBankingRelationDisplay="
-				+ isBankingRelationDisplay + ", minBankRelation=" + minBankRelation + ", maxBankRelation="
-				+ maxBankRelation + ", salaryModeIds=" + salaryModeIds + ", isSalaryModeDisplay=" + isSalaryModeDisplay
-				+ ", isSalaryModeMandatory=" + isSalaryModeMandatory + ", isSalaryAcTypeDisplay="
-				+ isSalaryAcTypeDisplay + ", isSalaryAcTypeMandatory=" + isSalaryAcTypeMandatory + ", salaryAcType="
-				+ salaryAcType + ", assessmentMethodId=" + assessmentMethodId + ", emiNmiDetailRequestList="
-				+ emiNmiDetailRequestList + ", isBasedOnIncome=" + isBasedOnIncome + ", isMultiplierOfIncomeCheck="
-				+ isMultiplierOfIncomeCheck + ", multiplierOfIncomeCheck=" + multiplierOfIncomeCheck
-				+ ", isEmiNmiCheck=" + isEmiNmiCheck + ", emiNmiCheck=" + emiNmiCheck + ", basedOnIncomeType="
-				+ basedOnIncomeType + ", multiplierIncomeType=" + multiplierIncomeType + ", basedOnType=" + basedOnType
-				+ ", bureauVersion=" + bureauVersion + ", minNetTakeHomeSalary=" + minNetTakeHomeSalary
-				+ ", isMinNetTakeHomeSalaryDisplay=" + isMinNetTakeHomeSalaryDisplay
-				+ ", isMinNetTakeHomeSalaryMandatory=" + isMinNetTakeHomeSalaryMandatory + ", campaignCode="
-				+ campaignCode + ", stdIncrementalPercentage=" + stdIncrementalPercentage + ", maxRetirementAge="
-				+ maxRetirementAge + ", isAllowAmtPastDue=" + isAllowAmtPastDue + ", isAllowSuitFiled="
-				+ isAllowSuitFiled + ", isEmiForEligibilityCalc=" + isEmiForEligibilityCalc + ", salAcType=" + salAcType
-				+ ", isSalAcTypeDisplay=" + isSalAcTypeDisplay + ", isSalAcTypeMandatory=" + isSalAcTypeMandatory
-				+ ", bureauScoreIds=" + bureauScoreIds + ", getJobId()=" + getJobId() + ", getId()=" + getId()
-				+ ", getEndDate()=" + getEndDate() + ", getName()=" + getName() + ", getProductId()=" + getProductId()
-				+ ", getStartDate()=" + getStartDate() + ", getUserId()=" + getUserId() + ", getProductCode()="
-				+ getProductCode() + ", getIsMatched()=" + getIsMatched() + ", getCreatedDate()=" + getCreatedDate()
-				+ ", getFpName()=" + getFpName() + ", getIsActive()=" + getIsActive() + ", getAppstage()="
-				+ getAppstage() + ", getScoreModelId()=" + getScoreModelId() + ", getBusinessTypeId()="
-				+ getBusinessTypeId() + ", getIsParameterFilled()=" + getIsParameterFilled() + ", getWcRenewalStatus()="
-				+ getWcRenewalStatus() + ", getFinId()=" + getFinId() + ", getProposalCount()=" + getProposalCount()
-				+ ", getActiveInactiveJobId()=" + getActiveInactiveJobId() + ", getActionFor()=" + getActionFor()
-				+ ", getGstType()=" + getGstType() + ", getScoreModelIdCoAppId()=" + getScoreModelIdCoAppId()
-				+ ", getPurposeLoanModelId()=" + getPurposeLoanModelId() + ", getImportFromId()=" + getImportFromId()
-				+ ", getIsGst()=" + getIsGst() + ", getIsItr()=" + getIsItr() + ", getIsBankStatement()="
-				+ getIsBankStatement() + ", getIsMca()=" + getIsMca() + ", getIsBureuPersonal()=" + getIsBureuPersonal()
-				+ ", getIsBureuCommercial()=" + getIsBureuCommercial() + ", getIsManualFill()=" + getIsManualFill()
-				+ ", getScoreModelIdOthThnSal()=" + getScoreModelIdOthThnSal() + ", getScoreModelIdCoAppIdOthThnSal()="
-				+ getScoreModelIdCoAppIdOthThnSal() + ", getProductType()=" + getProductType()
-				+ ", getMinInterestCoverageWithDepreciation()=" + getMinInterestCoverageWithDepreciation()
-				+ ", getMaxInterestCoverageWithDepreciation()=" + getMaxInterestCoverageWithDepreciation()
-				+ ", getIsInterestCoverageWithDepreciationDisplay()=" + getIsInterestCoverageWithDepreciationDisplay()
-				+ ", getIsInterestCoverageWithDepreciationMandatory()="
-				+ getIsInterestCoverageWithDepreciationMandatory() + ", getIndividualBureauMaximumSixMonthDPDs()="
-				+ getIndividualBureauMaximumSixMonthDPDs() + ", getIsIndividualBureauMaximumSixMonthDPDsDisplay()="
-				+ getIsIndividualBureauMaximumSixMonthDPDsDisplay()
-				+ ", getIsIndividualBureauMaximumSixMonthDPDsMandatory()="
-				+ getIsIndividualBureauMaximumSixMonthDPDsMandatory()
-				+ ", getIsIndividualBureauMaximumThreeMonthDPDsDisplay()="
-				+ getIsIndividualBureauMaximumThreeMonthDPDsDisplay()
-				+ ", getIsIndividualBureauMaximumThreeMonthDPDsMandatory()="
-				+ getIsIndividualBureauMaximumThreeMonthDPDsMandatory()
-				+ ", getIndividualBureauMaximumThreeMonthDPDs()=" + getIndividualBureauMaximumThreeMonthDPDs()
-				+ ", getProductTab()=" + getProductTab() + ", getModifiedDate()=" + getModifiedDate()
-				+ ", getGetData()=" + getGetData() + ", getNextPage()=" + getNextPage() + ", getPageIndex()="
-				+ getPageIndex() + ", getSize()=" + getSize() + ", getClass()=" + getClass() + ", hashCode()="
-				+ hashCode() + ", toString()=" + super.toString() + "]";
+	public List<Long> getCibilScoreCreditHistoryLessThanSixMonthIdsMandatory() {
+		return cibilScoreCreditHistoryLessThanSixMonthIdsMandatory;
 	}
-	
-	
+
+	public void setCibilScoreCreditHistoryLessThanSixMonthIdsMandatory(
+			List<Long> cibilScoreCreditHistoryLessThanSixMonthIdsMandatory) {
+		this.cibilScoreCreditHistoryLessThanSixMonthIdsMandatory = cibilScoreCreditHistoryLessThanSixMonthIdsMandatory;
+	}
+
+	public List<Long> getCibilScoreCreditHistoryLessThanSixMonthIdsOptional() {
+		return cibilScoreCreditHistoryLessThanSixMonthIdsOptional;
+	}
+
+	public void setCibilScoreCreditHistoryLessThanSixMonthIdsOptional(
+			List<Long> cibilScoreCreditHistoryLessThanSixMonthIdsOptional) {
+		this.cibilScoreCreditHistoryLessThanSixMonthIdsOptional = cibilScoreCreditHistoryLessThanSixMonthIdsOptional;
+	}
+
+	public BigDecimal getIndividualBureauMaximum12MonthDPDs() {
+		return individualBureauMaximum12MonthDPDs;
+	}
+
+	public void setIndividualBureauMaximum12MonthDPDs(BigDecimal individualBureauMaximum12MonthDPDs) {
+		this.individualBureauMaximum12MonthDPDs = individualBureauMaximum12MonthDPDs;
+	}
+
+	public Boolean getIsIndividualBureauMaximum12MonthDPDsDisplay() {
+		return isIndividualBureauMaximum12MonthDPDsDisplay;
+	}
+
+	public void setIsIndividualBureauMaximum12MonthDPDsDisplay(Boolean isIndividualBureauMaximum12MonthDPDsDisplay) {
+		this.isIndividualBureauMaximum12MonthDPDsDisplay = isIndividualBureauMaximum12MonthDPDsDisplay;
+	}
+
+	public Boolean getIsIndividualBureauMaximum12MonthDPDsMandatory() {
+		return isIndividualBureauMaximum12MonthDPDsMandatory;
+	}
+
+	public void setIsIndividualBureauMaximum12MonthDPDsMandatory(Boolean isIndividualBureauMaximum12MonthDPDsMandatory) {
+		this.isIndividualBureauMaximum12MonthDPDsMandatory = isIndividualBureauMaximum12MonthDPDsMandatory;
+	}
 	
 }
