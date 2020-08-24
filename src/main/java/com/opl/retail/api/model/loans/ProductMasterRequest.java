@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.Column;
 
@@ -117,6 +118,18 @@ public class ProductMasterRequest implements Serializable {
 //	Do You want to consider EMI of Borrower who is acting as a Guarantor/ Authorized User for Loan Eligibility calculation?
 	private Boolean isEmiForEligibilityCalc = false;
 	
+	private Integer productTab;
+	
+	private Date modifiedDate;
+	
+	private Map<String, Object> getData;
+	
+	private Integer nextPage;
+	
+	private Integer pageIndex;
+	   
+    private Integer size;
+    
 	public ProductMasterRequest() {
 		// Do nothing because of X and Y.
 	}
@@ -513,7 +526,70 @@ public class ProductMasterRequest implements Serializable {
 	public void setIsEmiForEligibilityCalc(Boolean isEmiForEligibilityCalc) {
 		this.isEmiForEligibilityCalc = isEmiForEligibilityCalc;
 	}
+
+	public BigDecimal getIndividualBureauMaximumThreeMonthDPDs() {
+		return individualBureauMaximumThreeMonthDPDs;
+	}
+
+	public void setIndividualBureauMaximumThreeMonthDPDs(BigDecimal individualBureauMaximumThreeMonthDPDs) {
+		this.individualBureauMaximumThreeMonthDPDs = individualBureauMaximumThreeMonthDPDs;
+	}
+
+	public Integer getProductTab() {
+		return productTab;
+	}
+
+	public void setProductTab(Integer productTab) {
+		this.productTab = productTab;
+	}
+
+	public Date getModifiedDate() {
+		return modifiedDate;
+	}
+
+	public void setModifiedDate(Date modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+
+	public Map<String, Object> getGetData() {
+		return getData;
+	}
+
+	public void setGetData(Map<String, Object> getData) {
+		this.getData = getData;
+	}
+
+	public Integer getNextPage() {
+		return nextPage;
+	}
+
+	public void setNextPage(Integer nextPage) {
+		this.nextPage = nextPage;
+	}
+
+	public Integer getPageIndex() {
+		return pageIndex;
+	}
+
+	public void setPageIndex(Integer pageIndex) {
+		this.pageIndex = pageIndex;
+	}
+
+	public Integer getSize() {
+		return size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+	}
 	
-	
+	public ProductMasterRequest(Long id, String name, Integer productId, Date createdDate, Date modifiedDate) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.productId = productId;
+		this.createdDate = createdDate;
+		this.modifiedDate = modifiedDate;
+	}
 	
 }

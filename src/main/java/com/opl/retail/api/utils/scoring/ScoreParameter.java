@@ -241,6 +241,8 @@ public class ScoreParameter {
              public static final String BORROWER_MARGIN = "BORROWER_MARGIN_AL";
              public static final String PERSONAL_RELATIONSHIP_WITH_BANK = "PERSONAL_RELATIONSHIP_WITH_BANK_AL";
              public static final String IS_ADHAAR_CARD = "IS_ADHAAR_CARD_AL";
+             public static final String VOL_OF_ENGINE = "VOL_OF_ENGINE_AL";
+             public static final String EX_SHOW_ROOM_PRICE_AL = "EX_SHOW_ROOM_PRICE_AL";
         }
     }
 
@@ -280,6 +282,8 @@ public class ScoreParameter {
 		public static final Integer IN_PROGRESS = 2;
 		public static final Integer REVERTED = 3;
 		public static final Integer APPROVED = 4;
+		public static final Integer REJECTED = 5;
+		public static final Integer EXPIRED = 6;
 		
 	}
     
