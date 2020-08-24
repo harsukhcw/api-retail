@@ -1,14 +1,15 @@
-package com.opl.retail.api.enums.oneform.scoring_msme;
+package com.opl.retail.api.enums.scoring;
 
-public enum ROIType {
-	MCLR(1, "MCLR", "MCLR"),
-	EBLR(2, "EBLR", "EBLR");
+public enum NumberofYear {
+	ONE(1, "1", "ONE"),
+	TWO(2, "2", "TWO"),
+	THREE(3, "3", "THREE");
 
 	private final Integer id;
 	private final String value;
 	private final String description;
 
-	ROIType(Integer id, String value, String description) {
+	NumberofYear(Integer id, String value, String description) {
 		this.id = id;
 		this.value = value;
 		this.description = description;
@@ -26,19 +27,21 @@ public enum ROIType {
 		return description;
 	}
 
-	public static ROIType getById(Integer id) {
+	public static NumberofYear getById(Integer id) {
 		switch (id) {
 		case 1:
-			return MCLR;
+			return ONE;
 		case 2:
-			return EBLR;
+			return TWO;
+		case 3:
+			return THREE;
 		default:
 			return null;
 		}
 	}
 
-	public static ROIType[] getAll() {
-		return ROIType.values();
+	public static NumberofYear[] getAll() {
+		return NumberofYear.values();
 
 	}
 }
