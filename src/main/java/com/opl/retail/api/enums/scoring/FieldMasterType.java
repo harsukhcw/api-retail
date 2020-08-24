@@ -1,8 +1,9 @@
-package com.opl.retail.api.enums.oneform.scoring_msme;
+package com.opl.retail.api.enums.scoring;
 
 public enum FieldMasterType {
 	RANGE(1, "RANGE", "RANGE"),
-	FIXED(2, "FIXED", "FIXED");
+	FIXED(2, "FIXED", "FIXED"),
+	COMBINATION(2, "COMBINATION", "COMBINATION");
 
 	private final Integer id;
 	private final String value;

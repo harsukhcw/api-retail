@@ -1,9 +1,8 @@
-package com.opl.retail.api.enums.oneform.scoring_msme;
+package com.opl.retail.api.enums.scoring;
 
 public enum RiskType {
-	MANAGEMENT_RISK(1, "MANAGEMENT RISK", "MANAGEMENT RISK"),
-	FINANCIAL_RISK(2, "FINANCIAL RISK", "FINANCIAL RISK"),
-	BUSINESS_RISK(3, "BUSINESS RISK", "BUSINESS RISK");
+	PERSONAL_RISK(1, "PERSONAL RISK", "Personal Risk"),
+	FINANCIAL_RISK(2, "FINANCIAL RISK", "Finanacial Risk");
 
 	private final Integer id;
 	private final String value;
@@ -30,11 +29,9 @@ public enum RiskType {
 	public static RiskType getById(Integer id) {
 		switch (id) {
 		case 1:
-			return MANAGEMENT_RISK;
+			return PERSONAL_RISK;
 		case 2:
 			return FINANCIAL_RISK;
-		case 3:
-			return BUSINESS_RISK;
 		default:
 			return null;
 		}
