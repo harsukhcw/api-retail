@@ -10,8 +10,10 @@ public class ModelParameterResponse {
 	private Long fieldMasterId;
 	private Long riskMakerId;
 	private Double maxScore;
-	private Integer yearId;
-	private Boolean isYearDisplay;
+	private Integer versionId;
+	private Integer incomeTypeId;;
+	private Boolean isVersionDisplay;
+	private Boolean isIncomeTypeDisplay;
 	private List<ModelParameterOptionRequest> modelParameterOptions=new ArrayList<ModelParameterOptionRequest>();
 	private List<FieldMasterRequest> FieldMasterRequestList;
 
@@ -55,14 +57,6 @@ public class ModelParameterResponse {
 		this.modelParameterOptions = modelParameterOptions;
 	}
 
-	public Integer getYearId() {
-		return yearId;
-	}
-
-	public void setYearId(Integer yearId) {
-		this.yearId = yearId;
-	}
-
 	public List<FieldMasterRequest> getFieldMasterRequestList() {
 		return FieldMasterRequestList;
 	}
@@ -71,20 +65,37 @@ public class ModelParameterResponse {
 		FieldMasterRequestList = fieldMasterRequestList;
 	}
 
-	public Boolean getYearDisplay() {
-		return isYearDisplay;
+	public Integer getVersionId() {
+		return versionId;
 	}
 
-	public void setYearDisplay(Boolean isYearDisplay) {
-		this.isYearDisplay = isYearDisplay;
+	public void setVersionId(Integer versionId) {
+		this.versionId = versionId;
 	}
 
-	@Override
-	public String toString() {
-		return "ModelParameterResponse [id=" + id + ", fieldMasterId=" + fieldMasterId + ", riskMakerId=" + riskMakerId
-				+ ", maxScore=" + maxScore + ", yearId=" + yearId + ", isYearDisplay=" + isYearDisplay
-				+ ", modelParameterOptions=" + modelParameterOptions + ", FieldMasterRequestList="
-				+ FieldMasterRequestList + "]";
+	public Integer getIncomeTypeId() {
+		return incomeTypeId;
 	}
+
+	public void setIncomeTypeId(Integer incomeTypeId) {
+		this.incomeTypeId = incomeTypeId;
+	}
+
+	public Boolean getIsVersionDisplay() {
+		return isVersionDisplay;
+	}
+
+	public void setIsVersionDisplay(Boolean isVersionDisplay) {
+		this.isVersionDisplay = isVersionDisplay;
+	}
+
+	public Boolean getIsIncomeTypeDisplay() {
+		return isIncomeTypeDisplay;
+	}
+
+	public void setIsIncomeTypeDisplay(Boolean isIncomeTypeDisplay) {
+		this.isIncomeTypeDisplay = isIncomeTypeDisplay;
+	}
+
 
 }
