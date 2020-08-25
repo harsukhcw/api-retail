@@ -18,8 +18,12 @@ public class FieldMasterRequest {
 	
 	private String fMstConfigurationJson;
 	
-	private Boolean isYearDisplay;
+	private Boolean isVersionDisplay;
+	
+	private Boolean isIncomeTypeDisplay;
+	
 	private Integer fMstType;
+	
 	private Integer sourceId;
 
 	public Long getId() {
@@ -94,15 +98,21 @@ public class FieldMasterRequest {
 		this.fMstConfigurationJson = fMstConfigurationJson;
 	}
 
-	public Boolean getIsYearDisplay() {
-		return isYearDisplay;
+	public Boolean getIsVersionDisplay() {
+		return isVersionDisplay;
 	}
 
-	public void setIsYearDisplay(Boolean isYearDisplay) {
-		this.isYearDisplay = isYearDisplay;
+	public void setIsVersionDisplay(Boolean isVersionDisplay) {
+		this.isVersionDisplay = isVersionDisplay;
 	}
 
-	
+	public Boolean getIsIncomeTypeDisplay() {
+		return isIncomeTypeDisplay;
+	}
+
+	public void setIsIncomeTypeDisplay(Boolean isIncomeTypeDisplay) {
+		this.isIncomeTypeDisplay = isIncomeTypeDisplay;
+	}
 
 	public Integer getSourceId() {
 		return sourceId;
