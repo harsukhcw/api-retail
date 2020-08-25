@@ -234,6 +234,35 @@ public class RetailProduct extends ProductMasterRequest {
 	
 	private List<Integer> bureauScoreIds = Collections.emptyList();
 	
+	// For Personal Loan:::: {}
+	private List<Long> manadatoryParameterIdList;
+	private List<Long> optioanalParameterIdList;
+	private List<ProductParameterMappingRequest> mandatoryParameters;
+	
+
+	public List<Long> getManadatoryParameterIdList() {
+		return manadatoryParameterIdList;
+	}
+
+	public void setManadatoryParameterIdList(List<Long> manadatoryParameterIdList) {
+		this.manadatoryParameterIdList = manadatoryParameterIdList;
+	}
+
+	public List<Long> getOptioanalParameterIdList() {
+		return optioanalParameterIdList;
+	}
+
+	public void setOptioanalParameterIdList(List<Long> optioanalParameterIdList) {
+		this.optioanalParameterIdList = optioanalParameterIdList;
+	}
+
+	public List<ProductParameterMappingRequest> getMandatoryParameters() {
+		return mandatoryParameters;
+	}
+
+	public void setMandatoryParameters(List<ProductParameterMappingRequest> mandatoryParameters) {
+		this.mandatoryParameters = mandatoryParameters;
+	}
 
 	public Long getFpProductId() {
 		return fpProductId;

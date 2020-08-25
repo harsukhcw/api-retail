@@ -229,6 +229,7 @@ public class PersonalLoanParameterNewRequest extends ProductMasterRequestNewStru
 	private List<Long> cibilScoreCreditHistoryLessThanSixMonthIdsMandatory;
 	private List<Long> cibilScoreCreditHistoryLessThanSixMonthIdsOptional;
 	
+	
 	/*
 	 * //FP NEW REQUIREMENT private Integer employmentId;
 	 * 
