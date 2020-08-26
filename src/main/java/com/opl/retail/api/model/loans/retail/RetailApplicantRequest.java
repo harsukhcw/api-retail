@@ -20,6 +20,7 @@ public class RetailApplicantRequest implements Serializable {
 	private Long clientId;
 	private Long applicationId;
 	private Long userId;
+	private Long profileId;
 	private Integer productId;
 
 	// Primary Fields
@@ -888,5 +889,16 @@ public class RetailApplicantRequest implements Serializable {
 	public void setProductId(Integer productId) {
 		this.productId = productId;
 	}
+
+
+	public Long getProfileId() {
+		return profileId;
+	}
+
+
+	public void setProfileId(Long profileId) {
+		this.profileId = profileId;
+	}
+	
 
 }

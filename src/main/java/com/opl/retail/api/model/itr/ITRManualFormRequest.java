@@ -13,6 +13,7 @@ public class ITRManualFormRequest implements Serializable {
 
 	private Long userId;
 	private Long applicationId;
+	private Long profileId;
 	private Long coAppId;
 	private String firstName;
 	private String secondName;
@@ -204,16 +205,24 @@ public class ITRManualFormRequest implements Serializable {
 	public void setIncomeDetails(Map<String, Object> incomeDetails) {
 		this.incomeDetails = incomeDetails;
 	}
+	
+	public Long getProfileId() {
+		return profileId;
+	}
+	public void setProfileId(Long profileId) {
+		this.profileId = profileId;
+	}
 	@Override
 	public String toString() {
-		return "ITRManualFormRequest [userId=" + userId + ", applicationId=" + applicationId + ", coAppId=" + coAppId
-				+ ", firstName=" + firstName + ", secondName=" + secondName + ", lastName=" + lastName + ", dob=" + dob
-				+ ", pan=" + pan + ", premiseNo=" + premiseNo + ", streetName=" + streetName + ", landmark=" + landmark
-				+ ", countryId=" + countryId + ", stateId=" + stateId + ", cityId=" + cityId + ", pincode=" + pincode
-				+ ", subDistrict=" + subDistrict + ", distId=" + distId + ", district=" + district + ", email=" + email
-				+ ", telephone=" + telephone + ", latestYear=" + latestYear + ", firstPreYearSalary="
-				+ firstPreYearSalary + ", secondPreYearSalary=" + secondPreYearSalary + ", businessTypeId="
-				+ businessTypeId + ", isAlreadyRead=" + isAlreadyRead + "]";
+		return "ITRManualFormRequest [userId=" + userId + ", applicationId=" + applicationId + ", profileId="
+				+ profileId + ", coAppId=" + coAppId + ", firstName=" + firstName + ", secondName=" + secondName
+				+ ", lastName=" + lastName + ", dob=" + dob + ", pan=" + pan + ", premiseNo=" + premiseNo
+				+ ", streetName=" + streetName + ", landmark=" + landmark + ", countryId=" + countryId + ", stateId="
+				+ stateId + ", cityId=" + cityId + ", pincode=" + pincode + ", subDistrict=" + subDistrict + ", distId="
+				+ distId + ", district=" + district + ", email=" + email + ", telephone=" + telephone + ", latestYear="
+				+ latestYear + ", firstPreYearSalary=" + firstPreYearSalary + ", secondPreYearSalary="
+				+ secondPreYearSalary + ", businessTypeId=" + businessTypeId + ", isAlreadyRead=" + isAlreadyRead
+				+ ", organisationName=" + organisationName + ", incomeDetails=" + incomeDetails + "]";
 	}
 	
 	
