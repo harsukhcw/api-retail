@@ -8,6 +8,9 @@ import com.opl.retail.api.service.scoring.*;
 
 
 public class ScoringModelReqRes {
+	
+	
+	private Integer productType;
 
 	private Long id;
 
@@ -361,13 +364,19 @@ public class ScoringModelReqRes {
 		
 		
 //	Concession Rate End
-	
-		
 		
 
 	public String getBorrowerStatus() {
 			return borrowerStatus;
 		}
+
+		public Integer getProductType() {
+		return productType;
+	}
+
+	public void setProductType(Integer productType) {
+		this.productType = productType;
+	}
 
 		public void setBorrowerStatus(String borrowerStatus) {
 			this.borrowerStatus = borrowerStatus;
