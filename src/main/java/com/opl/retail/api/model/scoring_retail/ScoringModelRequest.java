@@ -69,6 +69,8 @@ public class ScoringModelRequest {
 	
 	private Integer copyFromEmploymentTypeId;
 	
+	private Long parentScoringModelCheckerId;
+	
 
 	public Long getId() {
 		return id;
@@ -324,6 +326,14 @@ public class ScoringModelRequest {
 
 	public void setIsNonSalaried(Boolean isNonSalaried) {
 		this.isNonSalaried = isNonSalaried;
+	}
+
+	public Long getParentScoringModelCheckerId() {
+		return parentScoringModelCheckerId;
+	}
+
+	public void setParentScoringModelCheckerId(Long parentScoringModelCheckerId) {
+		this.parentScoringModelCheckerId = parentScoringModelCheckerId;
 	}
 	
 
