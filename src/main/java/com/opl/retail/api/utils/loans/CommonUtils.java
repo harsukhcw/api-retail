@@ -695,7 +695,15 @@ public class CommonUtils {
 			return PL_RETAIL_PRIMARY;
 		}
 
-		private static final String[] RETAIL_PRIMARY = { "loanAmountRequired", "loanPurpose", "tenureRequired",
+//		private static final String[] RETAIL_PRIMARY = { "loanAmountRequired", "loanPurpose", "tenureRequired",
+//				"repayment", "monthlyIncome", "createdBy", "createdDate", "isActive", "applicationId", "modifiedBy",
+//				"modifiedDate" };
+//
+//		public static String[] getRetailPrimary() {
+//			return RETAIL_PRIMARY;
+//		}
+
+		private static final String[] RETAIL_PRIMARY = { 
 				"repayment", "monthlyIncome", "createdBy", "createdDate", "isActive", "applicationId", "modifiedBy",
 				"modifiedDate" };
 
@@ -703,6 +711,7 @@ public class CommonUtils {
 			return RETAIL_PRIMARY;
 		}
 
+		
 		private static final String[] PL_RETAIL_FINAL = { "addressSameAs", "religion", "qualifyingYear", "noChildren",
 				"fatherName", "motherName", "spouseName", "noDependent", "residingMonth", "residingYear", "nationality",
 				"residentialStatus", "castId", "birthPlace", "disabilityType", "drivingLicenseNumber",
