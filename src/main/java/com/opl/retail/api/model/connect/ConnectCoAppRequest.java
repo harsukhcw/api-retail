@@ -18,6 +18,7 @@ public class ConnectCoAppRequest  implements Serializable {
 	private Boolean isIncomeConsider;
 	private String pan;
 	private Long  coApplicantId;
+	private Long profileId;
 
 
 	
@@ -83,4 +84,11 @@ public class ConnectCoAppRequest  implements Serializable {
 	public void setCoApplicantId(Long coApplicantId) {
 		this.coApplicantId = coApplicantId;
 	}
+	public Long getProfileId() {
+		return profileId;
+	}
+	public void setProfileId(Long profileId) {
+		this.profileId = profileId;
+	}
+	
 }

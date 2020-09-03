@@ -12,6 +12,8 @@ public class ConnectRequest implements Serializable {
 	private static final long serialVersionUID = 3408967653526547573L;
 
 	private Long userId;
+	private Long profileId;
+	private Long profileVerMapId;
 	private String productType;
 	private Long applicationId;
 	private Integer stageId;
@@ -45,6 +47,8 @@ public class ConnectRequest implements Serializable {
 	private Boolean isNbfcUser;
 	private Object dataInput;
 	private Integer connectFlowTypeId;
+	private Boolean isPaymentConsider;
+	private Boolean isPaymentCompleted;
 
 	private Integer newStageId; // Stage id to be used for updating stage
 
@@ -223,7 +227,7 @@ public class ConnectRequest implements Serializable {
 	public void setIsCoAppStage(Boolean isCoAppStage) {
 		this.isCoAppStage = isCoAppStage;
 	}
-	
+
 	public List<ConnectCoAppRequest> getCoAppList() {
 		return coAppList;
 	}
@@ -296,43 +300,6 @@ public class ConnectRequest implements Serializable {
 		this.connectFlowTypeId = connectFlowTypeId;
 	}
 
-	@Override
-	public String toString() {
-		return "ConnectRequest{" +
-				"userId=" + userId +
-				", productType='" + productType + '\'' +
-				", applicationId=" + applicationId +
-				", stageId=" + stageId +
-				", stepId=" + stepId +
-				", status=" + status +
-				", gstIn='" + gstIn + '\'' +
-				", gstnUserName='" + gstnUserName + '\'' +
-				", pan='" + pan + '\'' +
-				", businessTypeId=" + businessTypeId +
-				", directorId=" + directorId +
-				", lastYear=" + lastYear +
-				", branchId=" + branchId +
-				", orgId=" + orgId +
-				", wcRenewalStatus=" + wcRenewalStatus +
-				", proposalId=" + proposalId +
-				", createdDate=" + createdDate +
-				", modifiedDate=" + modifiedDate +
-				", msmeType=" + msmeType +
-				", inPrincipleDate=" + inPrincipleDate +
-				", commonMCQ=" + commonMCQ +
-				", isCoAppStage=" + isCoAppStage +
-				", coAppList=" + coAppList +
-				", isOldUser=" + isOldUser +
-				", isFillAdditionalForm=" + isFillAdditionalForm +
-				", coAppId=" + coAppId +
-				", loanTypeId=" + loanTypeId +
-				", isItrReturnFilled=" + isItrReturnFilled +
-				", isNbfcUser=" + isNbfcUser +
-				", dataInput=" + dataInput +
-				", connectFlowTypeId=" + connectFlowTypeId +
-				'}';
-	}
-
 	public Integer getNewStageId() {
 		return newStageId;
 	}
@@ -341,7 +308,6 @@ public class ConnectRequest implements Serializable {
 		this.newStageId = newStageId;
 	}
 
-
 	public Boolean getIsCoApp() {
 		return isCoApp;
 	}
@@ -349,4 +315,54 @@ public class ConnectRequest implements Serializable {
 	public void setIsCoApp(Boolean coApp) {
 		isCoApp = coApp;
 	}
+
+	public Long getProfileId() {
+		return profileId;
+	}
+
+	public void setProfileId(Long profileId) {
+		this.profileId = profileId;
+	}
+
+	public Long getProfileVerMapId() {
+		return profileVerMapId;
+	}
+
+	public void setProfileVerMapId(Long profileVerMapId) {
+		this.profileVerMapId = profileVerMapId;
+	}
+
+	public Boolean getIsPaymentConsider() {
+		return isPaymentConsider;
+	}
+
+	public void setIsPaymentConsider(Boolean isPaymentConsider) {
+		this.isPaymentConsider = isPaymentConsider;
+	}
+
+	public Boolean getIsPaymentCompleted() {
+		return isPaymentCompleted;
+	}
+
+	public void setIsPaymentCompleted(Boolean isPaymentCompleted) {
+		this.isPaymentCompleted = isPaymentCompleted;
+	}
+
+	@Override
+	public String toString() {
+		return "ConnectRequest [userId=" + userId + ", profileId=" + profileId + ", profileVerMapId=" + profileVerMapId
+				+ ", productType=" + productType + ", applicationId=" + applicationId + ", stageId=" + stageId
+				+ ", stepId=" + stepId + ", status=" + status + ", gstIn=" + gstIn + ", gstnUserName=" + gstnUserName
+				+ ", pan=" + pan + ", businessTypeId=" + businessTypeId + ", directorId=" + directorId + ", lastYear="
+				+ lastYear + ", branchId=" + branchId + ", orgId=" + orgId + ", wcRenewalStatus=" + wcRenewalStatus
+				+ ", proposalId=" + proposalId + ", createdDate=" + createdDate + ", modifiedDate=" + modifiedDate
+				+ ", msmeType=" + msmeType + ", inPrincipleDate=" + inPrincipleDate + ", commonMCQ=" + commonMCQ
+				+ ", isCoAppStage=" + isCoAppStage + ", isCoApp=" + isCoApp + ", coAppList=" + coAppList
+				+ ", isOldUser=" + isOldUser + ", isFillAdditionalForm=" + isFillAdditionalForm + ", coAppId=" + coAppId
+				+ ", loanTypeId=" + loanTypeId + ", isItrReturnFilled=" + isItrReturnFilled + ", isNbfcUser="
+				+ isNbfcUser + ", dataInput=" + dataInput + ", connectFlowTypeId=" + connectFlowTypeId
+				+ ", isPaymentConsider=" + isPaymentConsider + ", isPaymentCompleted=" + isPaymentCompleted
+				+ ", newStageId=" + newStageId + "]";
+	}
+	
 }
