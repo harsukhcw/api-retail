@@ -109,7 +109,7 @@ public class CoApplicantRequest {
 	private Boolean isIncomeConsider;
 	private Boolean isOwnedProp;
 	private String nameEditedByCoApp;
-	
+	private Long profileId;
 	
 	
 
@@ -156,6 +156,27 @@ public class CoApplicantRequest {
 		this.pan = pan;
 		this.isIncomeConsider = isIncomeConsider;
 	}
+	public CoApplicantRequest(Long id,String firstName, String middleName, String lastName, Integer relationshipWithApplicant, Long applicationId,Boolean isItrCompleted,Boolean isItrSkip,Boolean isItrManual,Boolean isCibilCompleted,Boolean isBankStatementCompleted,Boolean isOneFormCompleted,Boolean isBasicInfoFilled,Boolean isEmploymentInfoFilled,Boolean isContactInfoFilled,Boolean isCreditInfoFilled,String pan,Boolean isIncomeConsider,Long profileId) {
+        this.id = id;
+        this.applicationId = applicationId;
+        this.firstName = firstName;
+        this.relationshipWithApplicant = relationshipWithApplicant;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.isItrCompleted = isItrCompleted;
+        this.isItrSkip = isItrSkip;
+        this.isItrManual = isItrManual;
+        this.isCibilCompleted = isCibilCompleted;
+        this.isBankStatementCompleted = isBankStatementCompleted;
+        this.isOneFormCompleted = isOneFormCompleted;
+        this.isBasicInfoFilled = isBasicInfoFilled;
+        this.isEmploymentInfoFilled = isEmploymentInfoFilled;
+        this.isContactInfoFilled = isContactInfoFilled;
+        this.isCreditInfoFilled = isCreditInfoFilled;
+        this.pan = pan;
+        this.isIncomeConsider = isIncomeConsider;
+        this.profileId=profileId;
+    }
 
 	public Long getApplicationId() {
 		return applicationId;
@@ -905,4 +926,14 @@ public class CoApplicantRequest {
 	public void setEmploymentType(Integer employmentType) {
 		this.employmentType = employmentType;
 	}
+
+	public Long getProfileId() {
+		return profileId;
+	}
+
+	public void setProfileId(Long profileId) {
+		this.profileId = profileId;
+	}
+	
+	
 }
