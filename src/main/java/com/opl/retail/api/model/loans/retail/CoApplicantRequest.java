@@ -112,7 +112,6 @@ public class CoApplicantRequest {
 	private Long profileId;
 	
 	
-	
 
 	public String getNameEditedByCoApp() {
 		return nameEditedByCoApp;
@@ -936,5 +935,6 @@ public class CoApplicantRequest {
 	public void setProfileId(Long profileId) {
 		this.profileId = profileId;
 	}
+	
 	
 }
